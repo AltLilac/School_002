@@ -1,0 +1,54 @@
+@startuml
+
+title AimTraining
+
+start
+
+:初期化|
+
+if (セーブデータが存在するか？) then (true)
+    :ロード;
+else
+    :新規作成;
+endif
+
+:タイトル画面;
+
+if (プレイ) then (true)
+:簡単なゲーム説明|
+:メインゲーム;
+
+    while (制限時間内か？)
+        :描画|
+
+        if (命中したか？) then (true)
+            :スコアの加算;
+        else
+            :総合命中率の処理|
+        endif
+    endwhile
+        :リザルト画面;
+
+        :プレイ結果を保存;
+
+        :タイトル画面に戻る;
+
+        end
+        
+
+elseif (ランキング) then (true)
+:ランキング処理|
+:タイトル画面に戻る;
+end
+
+elseif (ゲームを終了) then (true)
+:終了;
+end
+
+else
+:タイトル画面に戻る;
+end
+
+endif
+
+@enduml
