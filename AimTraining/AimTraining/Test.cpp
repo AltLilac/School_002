@@ -1,10 +1,11 @@
-﻿#define TEST 1
+﻿#define TEST 0
 #if TEST == 1
 
 # include <Siv3D.hpp>
 
 void Main()
 {
+	/*
 	// セーブデータの読み込み
 	TextReader readSaveData(U"example/SaveDate.txt");
 
@@ -14,7 +15,7 @@ void Main()
 		// 新規作成
 		TextWriter writeSaveData(U"SaveData.txt");
 	}
-
+	*/
 
 	while (System::Update())
 	{
