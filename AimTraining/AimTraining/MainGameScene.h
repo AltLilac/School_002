@@ -6,9 +6,11 @@
 class MainGameScene : public App::Scene
 {
 private:
-	Stopwatch timeLimit;
-	// 合計スコア
-	// 的
+			int				timeLimit;		// 制限時間
+			int				totalScore;		// スコア
+	mutable Circle*			target;			// 的の描画
+	const   Rect*			playArea;		// プレイエリア
+			Array<Vec2>		points;			
 
 public:
 	MainGameScene(const InitData& init);

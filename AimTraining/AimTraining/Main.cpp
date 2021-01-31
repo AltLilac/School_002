@@ -6,14 +6,17 @@
 void Main()
 {
 	//const Circle circle(Scene::Center(), 100);
-
 	//int32 count = 0;
+
+	// フォントアセットの登録
+	FontAsset::Register(U"TitleFont", 90, Typeface::Medium);
+	FontAsset::Register(U"PressKeyFont", 50, Typeface::Medium);
 
 	// シーンマネージャー
 	App manager;
 	manager
-		.add<TitleScene>(State::Title)
-		.add<MainGameScene>(State::MainGame);
+		.add<TitleScene>(State::Title);
+		//.add<MainGameScene>(State::MainGame);
 
 	while (System::Update())
 	{
