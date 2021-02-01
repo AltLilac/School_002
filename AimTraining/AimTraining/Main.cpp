@@ -9,13 +9,15 @@ void Main()
 	//int32 count = 0;
 
 	// フォントアセットの登録
-	FontAsset::Register(U"TitleFont", 90, Typeface::Medium);
+	FontAsset::Register(U"TitleFont",	 90, Typeface::Medium);
 	FontAsset::Register(U"PressKeyFont", 50, Typeface::Medium);
+	FontAsset::Register(U"MenuFont",	 30, Typeface::Regular);
 
 	// シーンマネージャー
 	App manager;
 	manager
-		.add<TitleScene>(State::Title);
+		.add<TitleScene>	(State::Title)
+		.add<MainMenuScene>	(State::MainMenu);
 		//.add<MainGameScene>(State::MainGame);
 
 	while (System::Update())
