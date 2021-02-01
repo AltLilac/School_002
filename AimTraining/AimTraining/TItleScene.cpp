@@ -6,7 +6,7 @@ TitleScene::TitleScene(const InitData& init)
 
 }
 
-// タイトル画面の文字
+// タイトル画面のテキスト
 void TitleScene::drawTitleUI() const
 {
 	FontAsset(U"TitleFont")(U"Aim Training").drawAt(405, 155, ColorF(0.0, 0.7));		// 文字の影

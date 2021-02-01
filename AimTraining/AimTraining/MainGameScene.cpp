@@ -12,7 +12,7 @@ MainGameScene::MainGameScene(const InitData& init)
 
 void MainGameScene::draw() const
 {
-	
+	Scene::SetBackground(Palette::Cyan);
 }
 
 void MainGameScene::update()
