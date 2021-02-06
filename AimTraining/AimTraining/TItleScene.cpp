@@ -9,9 +9,9 @@ TitleScene::TitleScene(const InitData& init)
 // ƒ^ƒCƒgƒ‹‰æ–Ê‚ÌƒeƒLƒXƒg
 void TitleScene::drawTitleUI() const
 {
-	FontAsset(U"TitleFont")(U"Aim Training").drawAt(405, 155, ColorF(0.0, 0.7));		// •¶Žš‚Ì‰e
+	FontAsset(U"TitleFont")(U"Aim Training").drawAt(405, 153, ColorF(0.0, 0.7));		// •¶Žš‚Ì‰e
 	FontAsset(U"TitleFont")(U"Aim Training").drawAt(400, 150);
-	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(405, 465, ColorF(0.0, 0.7));	// •¶Žš‚Ì‰e
+	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(405, 462, ColorF(0.0, 0.7));	// •¶Žš‚Ì‰e
 	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(400, 460);
 }
 

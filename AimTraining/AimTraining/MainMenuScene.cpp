@@ -30,7 +30,7 @@ void MainMenuScene::draw() const
 	backTitleButton	->draw(ColorF(1.0, backTitleTransition	->value())).drawFrame(2);
 	exitButton		->draw(ColorF(1.0, exitTransition		->value())).drawFrame(2);
 
-	FontAsset(U"MenuTitleFont")(U"Aim Training").drawAt(405, 85, ColorF(0.0, 0.7));	// 文字の影
+	FontAsset(U"MenuTitleFont")(U"Aim Training").drawAt(405, 82, ColorF(0.0, 0.7));	// 文字の影
 	FontAsset(U"MenuTitleFont")(U"Aim Training").drawAt(400, 80);
 
 	// ボタンのテキスト
