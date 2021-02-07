@@ -14,6 +14,7 @@ void Main()
 	FontAsset::Register(U"MenuTitleFont",	70, Typeface::Medium);
 	FontAsset::Register(U"MenuFont",		30, Typeface::Regular);
 	FontAsset::Register(U"TutorialFont",	35, Typeface::Regular);
+	FontAsset::Register(U"MainGameFont",	30, Typeface::Regular);
 
 	// シーンマネージャー
 	App manager;
