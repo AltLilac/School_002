@@ -15,6 +15,8 @@ void Main()
 	FontAsset::Register(U"MenuFont",		30, Typeface::Regular);
 	FontAsset::Register(U"TutorialFont",	35, Typeface::Regular);
 	FontAsset::Register(U"MainGameFont",	30, Typeface::Regular);
+	FontAsset::Register(U"GameOverFont",	50, Typeface::Regular);
+	FontAsset::Register(U"ResultFont",		40, Typeface::Regular);
 
 	// シーンマネージャー
 	App manager;

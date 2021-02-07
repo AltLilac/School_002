@@ -6,6 +6,8 @@
 class ResultScene : public App::Scene
 {
 private:
+	Rect*		backMenuButton;			// メインメニューに戻るボタン
+	Transition* backMenuTransition;		// ボタンに適用するトランジション
 
 public:
 	ResultScene(const InitData& init);

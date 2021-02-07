@@ -24,6 +24,10 @@ void TitleScene::draw() const
 
 void TitleScene::update()
 {
+	// セーブデータが存在しなかったら
+	// 新規作成
+	// していたら既存のファイルを読み込む
+
 	if (KeyEnter.down())
 		changeScene(State::MainMenu);
 }
