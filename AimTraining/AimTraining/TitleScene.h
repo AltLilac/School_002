@@ -6,6 +6,7 @@
 class TitleScene : public App::Scene
 {
 private:
+	TextWriter readSaveData;	// セーブデータファイルの読み込み
 
 public:
 	TitleScene(const InitData& init);

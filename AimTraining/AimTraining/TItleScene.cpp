@@ -2,6 +2,7 @@
 
 TitleScene::TitleScene(const InitData& init)
 	: IScene(init)
+	, readSaveData	(U"Saved/SaveDate.txt")	// セーブデータの相対パス
 {
 
 }
@@ -25,8 +26,11 @@ void TitleScene::draw() const
 void TitleScene::update()
 {
 	// セーブデータが存在しなかったら
-	// 新規作成
-	// していたら既存のファイルを読み込む
+	if (!readSaveData)
+	{
+		// 新規作成
+		TextWriter writeSaveData(U"Saved/SaveData.txt");
+	}
 
 	if (KeyEnter.down())
 		changeScene(State::MainMenu);
