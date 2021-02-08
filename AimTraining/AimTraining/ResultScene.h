@@ -8,7 +8,14 @@ class ResultScene : public App::Scene
 {
 private:
 	Rect*		backMenuButton;			// メインメニューに戻るボタン
-	Transition* backMenuTransition;		// ボタンに適用するトランジション
+	Rect*		saveScoreButton;		// プレイ結果を保存するボタン
+
+	// 各ボタンに適用するトランジション
+	Transition* backMenuTransition;
+	Transition* saveScoreTransition;
+
+	TextReader	readSaveData;			// セーブデータの読み込み
+	TextWriter  writeSaveData;			// セーブデータの書き込み
 
 public:
 	ResultScene(const InitData& init);

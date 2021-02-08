@@ -2,25 +2,21 @@
 
 TitleScene::TitleScene(const InitData& init)
 	: IScene(init)
-	, readSaveData	(U"Saved/SaveDate.txt")	// セーブデータの相対パス
+	, readSaveData	(U"Saved/SaveData.txt")	// セーブデータの相対パス
 {
 
-}
-
-// タイトル画面のテキスト
-void TitleScene::drawTitleUI() const
-{
-	FontAsset(U"TitleFont")(U"Aim Training").drawAt(405, 153, ColorF(0.0, 0.7));		// 文字の影
-	FontAsset(U"TitleFont")(U"Aim Training").drawAt(400, 150);
-	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(405, 462, ColorF(0.0, 0.7));	// 文字の影
-	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(400, 460);
 }
 
 void TitleScene::draw() const
 {
+	// 背景色の指定
 	Scene::SetBackground(Palette::Cyan);
 
-	drawTitleUI();
+	// シーン上に表示するテキスト UI
+	FontAsset(U"TitleFont")(U"Aim Training").drawAt(405, 153, ColorF(0.0, 0.7));		// 文字の影
+	FontAsset(U"TitleFont")(U"Aim Training").drawAt(400, 150);
+	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(405, 462, ColorF(0.0, 0.7));	// 文字の影
+	FontAsset(U"PressKeyFont")(U"Press Enter Key").drawAt(400, 460);
 }
 
 void TitleScene::update()

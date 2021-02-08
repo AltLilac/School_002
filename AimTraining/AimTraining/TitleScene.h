@@ -6,15 +6,13 @@
 class TitleScene : public App::Scene
 {
 private:
-	TextWriter readSaveData;	// セーブデータファイルの読み込み
+	TextReader readSaveData;	// セーブデータファイルの読み込み
 
 public:
 	TitleScene(const InitData& init);
 
 	void draw()   const override;
 	void update() override;
-
-	void drawTitleUI() const;
 };
 
 #endif
