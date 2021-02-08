@@ -9,8 +9,10 @@ MainGameScene::MainGameScene(const InitData& init)
 	, delaySW		(false)					// 遅延処理用ストップウォッチ
 	, delayTime		(4)						// 遅延処理にかける時間
 {
-
+	
 }
+
+int MainGameScene::scoreContainer = 0;
 
 void MainGameScene::draw() const
 {
@@ -57,6 +59,8 @@ void MainGameScene::update()
 		currentTime = 0;
 		timeLimitSW.pause();
 		delaySW.start();
+
+		scoreContainer = totalScore;	// スコアを保存
 
 		// delaySW の 経過時間が delayTime を超えたら
 		if (delaySW.s() > delayTime)

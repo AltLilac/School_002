@@ -9,7 +9,7 @@ ResultScene::ResultScene(const InitData& init)
 	// ボタンに適用するトランジション
 	, backMenuTransition(new Transition(0.4s, 0.2s))
 {
-
+	
 }
 
 void ResultScene::draw() const
@@ -19,7 +19,7 @@ void ResultScene::draw() const
 	FontAsset(U"MenuTitleFont")(U"Session Ended").drawAt(405, 82, ColorF(0.0, 0.7));	// 文字の影
 	FontAsset(U"MenuTitleFont")(U"Session Ended").drawAt(400, 80);
 
-	FontAsset(U"ResultFont")(U"Your Score : ").drawAt(200, 250, ColorF(0.25));
+	FontAsset(U"ResultFont")(U"Your Score : ", MainGameScene::GetScore()).drawAt(200, 250, ColorF(0.25));
 
 	// ボタンの描画
 	backMenuButton->draw(ColorF(1.0, backMenuTransition->value())).drawFrame(2);

@@ -2,6 +2,7 @@
 #define ___RESULTSCENE
 
 #include "GameState.h"
+#include "MainGameScene.h"
 
 class ResultScene : public App::Scene
 {

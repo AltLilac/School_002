@@ -18,13 +18,15 @@ private:
 
 	const int	delayTime;		// 遅延処理にかける時間
 
+	static int	scoreContainer;	// このシーンで獲得したスコアを保存しておく
+
 public:
 	MainGameScene(const InitData& init);
 
 	void draw()   const override;
 	void update() override;
 
-	int GetScore() const { return totalScore; }
+	static int GetScore() { return scoreContainer; }
 };
 
 #endif
