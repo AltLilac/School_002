@@ -36,7 +36,7 @@ void MainMenuScene::draw() const
 	// ボタンのテキスト
 	FontAsset(U"MenuFont")(U"プレイ")		.drawAt(playButton		->center(), ColorF(0.25));
 	FontAsset(U"MenuFont")(U"ランキング")	.drawAt(rankingButton	->center(), ColorF(0.25));
-	FontAsset(U"MenuFont")(U"タイトルに戻る")	.drawAt(backTitleButton	->center(), ColorF(0.25));
+	FontAsset(U"MenuFont")(U"タイトルへ戻る")	.drawAt(backTitleButton	->center(), ColorF(0.25));
 	FontAsset(U"MenuFont")(U"ゲームを終了")	.drawAt(exitButton		->center(), ColorF(0.25));
 
 	// チュートリアルスキップのチェックボックス

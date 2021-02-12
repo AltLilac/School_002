@@ -8,7 +8,7 @@ class ResultScene : public App::Scene
 {
 private:
 	Rect*		backMenuButton;			// メインメニューに戻るボタン
-	Rect*		saveScoreButton;		// プレイ結果を保存するボタン
+	Rect*		saveScoreButton;		// プレイ結果を保存して終了するボタン
 
 	// 各ボタンに適用するトランジション
 	Transition* backMenuTransition;

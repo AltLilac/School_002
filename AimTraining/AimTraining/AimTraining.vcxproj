@@ -112,7 +112,6 @@
     <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="RankingScene.cpp" />
     <ClCompile Include="ResultScene.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="TutorialScene.cpp" />
