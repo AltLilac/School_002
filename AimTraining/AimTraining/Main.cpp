@@ -1,6 +1,3 @@
-#define TEST 1
-#if TEST == 1
-
 #include "Scenes.h"
 
 void Main()
@@ -31,5 +28,3 @@ void Main()
 			break;
 	}
 }
-
-#endif
