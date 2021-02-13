@@ -17,14 +17,14 @@ private:
 	String thirdScore;
 
 	// 各順位のスコア用変数に set する
-	void SetFirstScore	(String arg) { firstScore = arg; }
-	void SetSecondScore	(String arg) { secondScore = arg; }
-	void SetThirdScore	(String arg) { thirdScore = arg; }
+	void SetFirstScore	(String arg) noexcept { firstScore = arg; }
+	void SetSecondScore	(String arg) noexcept { secondScore = arg; }
+	void SetThirdScore	(String arg) noexcept { thirdScore = arg; }
 
 	// 各順位のスコアを get する
-	String GetFirstScore()	const { return firstScore; }
-	String GetSecondScore()	const { return secondScore; }
-	String GetThirdScore()	const { return thirdScore; }
+	String GetFirstScore()	const noexcept { return firstScore; }
+	String GetSecondScore()	const noexcept { return secondScore; }
+	String GetThirdScore()	const noexcept { return thirdScore; }
 
 public:
 	RankingScene(const InitData& init);

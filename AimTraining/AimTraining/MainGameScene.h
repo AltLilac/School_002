@@ -26,7 +26,7 @@ public:
 	void draw()   const override;
 	void update() override;
 
-	static int GetScore() { return scoreContainer; }
+	static int GetScore() noexcept { return scoreContainer; }
 };
 
 #endif
