@@ -25,10 +25,7 @@ RankingScene::RankingScene(const InitData& init)
 	}
 
 	// データをソートで並べ替え
-	std::sort(dataArray.begin(), dataArray.end(), [](String a, String b)
-		{
-			return a > b;
-		});
+	std::sort(dataArray.begin(), dataArray.end(), std::greater<String>{});
 
 	// 上位 3 つを取得し、取得したデータのみで新しくセーブデータファイルを作成（上位 3 位以下のセッションリザルトを保持する必要がないため）
 	SetFirstScore(dataArray[0]);

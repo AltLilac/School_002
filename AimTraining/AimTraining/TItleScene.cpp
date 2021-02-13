@@ -26,6 +26,16 @@ void TitleScene::update()
 	{
 		// 新規作成
 		TextWriter writeSaveData(U"Saved/SaveData.txt");
+
+		// 空のデータを作成（未プレイの際に RankingScene を訪れた時に、1st : 0, 2nd : 0, 3rd : 0 の状態にしておく）
+		// RankingScene の 順位表示で使用する String 変数を 0 で初期化するとアクセス違反で怒られる為
+		int count = 0;
+
+		while (count < 3)
+		{
+			writeSaveData.writeln(U"0");
+			count++;
+		}
 	}
 
 	if (KeyEnter.down())
