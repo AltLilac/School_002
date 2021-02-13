@@ -31,9 +31,6 @@ RankingScene::RankingScene(const InitData& init)
 	SetFirstScore(dataArray[0]);
 	SetSecondScore(dataArray[1]);
 	SetThirdScore(dataArray[2]);
-
-	// 多分初回セーブデータ生成時に 0, 0, 0 の空データを用意しとかないと怒られる
-	// なぜか配列の 3 個目までしかソートしてくれない
 }
 
 void RankingScene::draw() const

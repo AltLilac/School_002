@@ -48,7 +48,7 @@ void MainGameScene::update()
 
 		if (target->leftClicked())
 		{
-			totalScore += 10;
+			totalScore += 1;
 			delete target;
 		}
 	}
