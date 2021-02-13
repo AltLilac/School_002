@@ -8,8 +8,35 @@ RankingScene::RankingScene(const InitData& init)
 
 	// ボタンのトランシジョン
 	, backMenuTransition(new Transition(0.4s, 0.2s))
-{
 
+	, readSaveData(U"Saved/SaveData.txt")	// セーブデータの相対パス
+{
+	// データを一時的に保持しておく配列
+	Array<String> dataArray;
+
+	// 内容を読み込む変数
+	String data;
+
+	// セーブデータに記録されているスコアを全て取得
+	// 終端に達するまで 1 個ずつ読み込む
+	while (readSaveData.readLine(data))
+	{
+		dataArray << data;	// 1 個ずつ追加
+	}
+
+	// データをソートで並べ替え
+	std::sort(dataArray.begin(), dataArray.end(), [](String a, String b)
+		{
+			return a > b;
+		});
+
+	// 上位 3 つを取得し、取得したデータのみで新しくセーブデータファイルを作成（上位 3 位以下のセッションリザルトを保持する必要がないため）
+	SetFirstScore(dataArray[0]);
+	SetSecondScore(dataArray[1]);
+	SetThirdScore(dataArray[2]);
+
+	// 多分初回セーブデータ生成時に 0, 0, 0 の空データを用意しとかないと怒られる
+	// なぜか配列の 3 個目までしかソートしてくれない
 }
 
 void RankingScene::draw() const
@@ -20,10 +47,10 @@ void RankingScene::draw() const
 	FontAsset(U"MenuTitleFont")(U"Ranking").drawAt(405, 82, ColorF(0.0, 0.7));	// 文字の影
 	FontAsset(U"MenuTitleFont")(U"Ranking").drawAt(400, 80);
 
-	// 順位
-	FontAsset(U"ResultFont")(U"1st : ").drawAt(200, 230, ColorF(0.25));
-	FontAsset(U"ResultFont")(U"2nd : ").drawAt(200, 300, ColorF(0.25));
-	FontAsset(U"ResultFont")(U"3rd : ").drawAt(200, 370, ColorF(0.25));
+	// 順位の表示
+	FontAsset(U"ResultFont")(U"1st : ", GetFirstScore()).drawAt(200, 200, ColorF(0.25));
+	FontAsset(U"ResultFont")(U"2nd : ", GetSecondScore()).drawAt(200, 280, ColorF(0.25));
+	FontAsset(U"ResultFont")(U"3rd : ", GetThirdScore()).drawAt(200, 360, ColorF(0.25));
 
 	// ボタンの描画
 	backMenuButton->draw(ColorF(1.0, backMenuTransition->value())).drawFrame(2);
@@ -37,10 +64,21 @@ void RankingScene::update()
 	// トランジションの更新
 	backMenuTransition->update(backMenuButton->mouseOver());
 
+	// セーブデータが存在しなかったら
+	if (!readSaveData)
+	{
+		throw Error(U"Failed to load savedata");
+	}
+
 	// ボタンにカーソルを合わせたら、マウスカーソルのスタイルを変更
 	if (backMenuButton->mouseOver())
 		Cursor::RequestStyle(CursorStyle::Hand);
 
 	if (backMenuButton->leftClicked())
 		changeScene(State::MainMenu);
+}
+
+RankingScene::~RankingScene()
+{
+	delete backMenuButton, backMenuTransition;
 }
