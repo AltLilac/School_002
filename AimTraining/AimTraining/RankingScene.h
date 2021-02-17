@@ -12,19 +12,19 @@ private:
 	TextReader	readSaveData;			// セーブデータファイルの読み込み
 
 	// 各順位のスコア
-	String firstScore;
-	String secondScore;
-	String thirdScore;
+	int firstScore;
+	int secondScore;
+	int thirdScore;
 
-	// 各順位のスコア用変数に set する
-	void SetFirstScore	(String arg) noexcept { firstScore = arg; }
-	void SetSecondScore	(String arg) noexcept { secondScore = arg; }
-	void SetThirdScore	(String arg) noexcept { thirdScore = arg; }
+	// 各順位のスコア用変数に代入する
+	void SetFirstScore	(int arg) noexcept { firstScore = arg; }
+	void SetSecondScore	(int arg) noexcept { secondScore = arg; }
+	void SetThirdScore	(int arg) noexcept { thirdScore = arg; }
 
-	// 各順位のスコアを get する
-	String GetFirstScore()	const noexcept { return firstScore; }
-	String GetSecondScore()	const noexcept { return secondScore; }
-	String GetThirdScore()	const noexcept { return thirdScore; }
+	// 各順位のスコアを取得する
+	int GetFirstScore()		const noexcept { return firstScore; }
+	int GetSecondScore()	const noexcept { return secondScore; }
+	int GetThirdScore()		const noexcept { return thirdScore; }
 
 public:
 	RankingScene(const InitData& init);

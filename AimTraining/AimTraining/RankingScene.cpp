@@ -12,20 +12,25 @@ RankingScene::RankingScene(const InitData& init)
 	, readSaveData(U"Saved/SaveData.txt")	// セーブデータの相対パス
 {
 	// データを一時的に保持しておく配列
-	Array<String> dataArray;
+	Array<int> dataArray;
 
 	// 内容を読み込む変数
-	String data;
+	String	data;
+	int		intData;
 
 	// セーブデータに記録されているスコアを全て取得
 	// 終端に達するまで 1 個ずつ読み込む
 	while (readSaveData.readLine(data))
 	{
-		dataArray << data;	// 1 個ずつ追加
+		// String を int へ変換
+		intData = atoi(data.narrow().c_str());
+
+		// 末尾に要素を追加
+		dataArray << intData;
 	}
 
 	// データをソートで並べ替え
-	std::sort(dataArray.begin(), dataArray.end(), std::greater<String>{});
+	std::sort(dataArray.begin(), dataArray.end(), std::greater<int>{});
 
 	// 上位 3 つのセッションリザルトを取得する
 	SetFirstScore(dataArray[0]);
