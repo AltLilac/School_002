@@ -128,3 +128,8 @@ void MainGameScene::update()
 		}
 	}
 }
+
+MainGameScene::~MainGameScene()
+{
+	delete target;
+}

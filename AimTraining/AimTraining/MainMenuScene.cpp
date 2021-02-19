@@ -71,3 +71,10 @@ void MainMenuScene::update()
 	if (exitButton->leftClicked())
 		System::Exit();						// ƒQ[ƒ€‚ğI—¹
 }
+
+MainMenuScene::~MainMenuScene()
+{
+	delete
+		playButton,		rankingButton,		backTitleButton,		exitButton,
+		playTransition, rankingTransition,	backTitleTransition,	exitTransition;
+}

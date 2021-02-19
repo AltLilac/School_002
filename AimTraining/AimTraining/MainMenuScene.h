@@ -22,6 +22,8 @@ private:
 public:
 	MainMenuScene(const InitData& init);
 
+	~MainMenuScene();
+
 	void draw() const override;
 	void update() override;
 };

@@ -33,9 +33,9 @@ RankingScene::RankingScene(const InitData& init)
 	std::sort(dataArray.begin(), dataArray.end(), std::greater<int>{});
 
 	// 上位 3 つのセッションリザルトを取得する
-	SetFirstScore(dataArray[0]);
-	SetSecondScore(dataArray[1]);
-	SetThirdScore(dataArray[2]);
+	SetFirstScore(dataArray.at(0));
+	SetSecondScore(dataArray.at(1));
+	SetThirdScore(dataArray.at(2));
 }
 
 void RankingScene::draw() const

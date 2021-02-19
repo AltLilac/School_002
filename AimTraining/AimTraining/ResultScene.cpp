@@ -67,3 +67,10 @@ void ResultScene::update()
 	if (backMenuButton->leftClicked())
 		changeScene(State::MainMenu);
 }
+
+ResultScene::~ResultScene()
+{
+	delete
+		backMenuButton,		saveScoreButton,
+		backMenuTransition, saveScoreTransition;
+}

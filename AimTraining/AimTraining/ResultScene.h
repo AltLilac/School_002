@@ -20,6 +20,8 @@ private:
 public:
 	ResultScene(const InitData& init);
 
+	~ResultScene();
+
 	void draw() const override;
 	void update() override;
 };

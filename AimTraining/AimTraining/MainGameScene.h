@@ -28,6 +28,8 @@ private:
 public:
 	MainGameScene(const InitData& init);
 
+	~MainGameScene();
+
 	void draw()   const override;
 	void update() override;
 
