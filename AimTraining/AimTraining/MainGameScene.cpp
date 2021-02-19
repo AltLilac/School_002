@@ -2,7 +2,7 @@
 
 MainGameScene::MainGameScene(const InitData& init)
 	: IScene(init)
-	, timeLimit			(10)				// 制限時間の初期設定
+	, timeLimit			(30)				// 制限時間の初期設定
 	, currentTime		(timeLimit)			// 現在の制限時間
 	, totalScore		(0)					// スコアの合計
 
@@ -75,7 +75,7 @@ void MainGameScene::update()
 			if (target->leftClicked())
 			{
 				// スコアの加算
-				totalScore += 1;
+				totalScore += 10;
 
 				// 表示制限時間のカウントをリセット
 				visibleDurationSW.reset();
